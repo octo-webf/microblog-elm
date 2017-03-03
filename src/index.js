@@ -1,6 +1,6 @@
 'use strict';
 
-import Elm from './App/App.elm';
+import Elm from './App/Main.elm';
 
 const element = document.getElementById('elm-app');
-Elm.App.embed(element);
+Elm.Main.embed(element);
