@@ -1,7 +1,15 @@
 module Components.Login exposing (..)
 
+import Html.CssHelpers
 import Html exposing (Html, div, text, img, p, form, input, button)
-import Html.Attributes exposing (class, src, type_, autocomplete, placeholder, autofocus)
+import Html.Attributes exposing (src, type_, autocomplete, placeholder, autofocus)
+
+import Components.LoginCss exposing (CssClasses(..))
+import Css.AppCss exposing (CssClasses(..))
+
+{ class } =
+    Html.CssHelpers.withNamespace "microblog"
+
 
 -- MODEL
 
@@ -28,30 +36,30 @@ defaultLoginModel =
 
 loginView : LoginModel -> Html msg
 loginView model =
-    div [ class "login" ]
-        [ div [ class "login-header" ]
-          [ div [ class "login-header__logo" ]
-            [ img [ class "login-header__logo-image"
-                  , src model.logo
-                  ] []
+    div [ class [ App ] ]
+      [ div [ class [ Login ] ]
+        [ div [ class [ LoginHeader ] ]
+          [ div [ class [ LoginHeaderLogo ] ]
+            [ img [ class [ LoginHeaderLogoImage ]
+                  , src model.logo ] []
             ]
           ]
-        , div [ class "login-body" ]
-          [ div [ class "login-body__description" ]
+        , div [ ]
+          [ div [ class [ LoginBodyDescription ] ]
             [ p [] [ text model.intro ] ]
-          , div [ class "login-body__form" ]
-            [ div [ class "login-form" ]
-              [ form [ class "login-form__form"]
-                [ div [ class "login-form__control" ]
-                  [ input [ class "login-form__username"
+          , div [ class [ LoginBodyForm ] ]
+            [ div [ class [ LoginForm ] ]
+              [ form []
+                [ div []
+                  [ input [ class [ LoginFormUsername ]
                           , type_ "text"
                           , autocomplete True
                           , placeholder model.inputPlaceholder
                           , autofocus True ] []
                   ]
-                , div [ class "login-form__control" ]
-                  [ button [ type_ "submit"
-                           , class "login-form__identificate"]
+                , div []
+                  [ button [ class [ LoginFormSubmit ]
+                           , type_ "submit" ]
                            [ text model.submitLabel ]
                   ]
                 ]
@@ -59,3 +67,5 @@ loginView model =
             ]
           ]
         ]
+      ]
+
