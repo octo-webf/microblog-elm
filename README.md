@@ -15,6 +15,13 @@ npm install -g yarn@0.21.3
 yarn
 ```
 
+### Launching tests
+```console
+yarn test
+or
+yarn test-watch
+```
+
 ### Building CSS
 
 ```console
