@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/octo-web-front-end-tribe/microblog-elm.svg?branch=master)](https://travis-ci.org/octo-web-front-end-tribe/microblog-elm)
+
 # microblog-elm
 
 ## Requirements
