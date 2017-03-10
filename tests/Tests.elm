@@ -1,7 +1,7 @@
 module Tests exposing (..)
 
 import Test exposing (..)
-import Components.LoginTest as LoginTest
+import Views.LoginTest as LoginTest
 
 all : Test
 all =

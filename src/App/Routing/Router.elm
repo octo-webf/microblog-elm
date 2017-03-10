@@ -5,14 +5,16 @@ import UrlParser exposing (..)
 
 
 type Route
-    = LoginRoute
+    = MessagesRoute
+    | LoginRoute
     | NotFoundRoute
 
 
 matchers : Parser (Route -> a) a
 matchers =
     oneOf
-        [ map LoginRoute top
+        [ map MessagesRoute top
+        , map LoginRoute (s "login")
         ]
 
 

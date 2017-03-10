@@ -1,10 +1,10 @@
-module Components.LoginTest exposing (all)
+module Views.LoginTest exposing (all)
 
 import Test exposing (..)
 import Test.Html.Query as Query
 import Test.Html.Selector exposing (..)
 
-import Components.Login exposing (loginView, defaultLoginModel)
+import Views.Login exposing (loginView, defaultLoginModel)
 
 
 all : Test

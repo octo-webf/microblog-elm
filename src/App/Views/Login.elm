@@ -1,10 +1,10 @@
-module Components.Login exposing (..)
+module Views.Login exposing (..)
 
 import Html.CssHelpers
 import Html exposing (Html, div, text, img, p, form, input, button)
 import Html.Attributes exposing (src, type_, autocomplete, placeholder, autofocus)
 
-import Components.LoginCss exposing (CssClasses(..))
+import Views.LoginCss exposing (CssClasses(..))
 import Css.AppCss exposing (CssClasses(..))
 
 { class } =
