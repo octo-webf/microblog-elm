@@ -4,7 +4,7 @@ import Css exposing (..)
 import Css.Elements exposing (body, input)
 import Css.Namespace exposing (namespace)
 
-import Components.LoginCss
+import Views.LoginCss
 
 type CssClasses =
     App
@@ -34,5 +34,5 @@ css =
             , border3 (px 1) solid (hex "99CDE1")
             ]
         ]
-        ++ Components.LoginCss.css
+        ++ Views.LoginCss.css
     )

@@ -1,7 +1,7 @@
 module Models exposing (..)
 
 import Routing.Router exposing (Route)
-import Components.Login exposing (LoginModel, defaultLoginModel)
+import Views.Login exposing (LoginModel, defaultLoginModel)
 
 type alias Model =
     { route : Route

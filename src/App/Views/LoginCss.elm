@@ -1,4 +1,4 @@
-module Components.LoginCss exposing (..)
+module Views.LoginCss exposing (..)
 
 import Css exposing (..)
 

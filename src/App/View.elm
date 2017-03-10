@@ -5,7 +5,7 @@ import Messages exposing (Msg(..))
 import Models exposing (Model)
 import Routing.Router exposing (Route(..))
 import Errors.ErrorViews exposing (notFoundView)
-import Components.Login exposing (loginView)
+import Views.Login exposing (loginView)
 
 
 view : Model -> Html Msg
