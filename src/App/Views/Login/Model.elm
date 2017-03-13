@@ -6,7 +6,7 @@ type alias Model =
     , intro : String
     , inputPlaceholder : String
     , submitLabel : String
-    , requiredPath : String
+    , path : String
     }
 
 
@@ -16,5 +16,5 @@ defaultModel =
     , intro = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit."
     , inputPlaceholder = "Your username"
     , submitLabel = "Login"
-    , requiredPath = "hola"
+    , path = "hola"
     }

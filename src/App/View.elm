@@ -15,6 +15,6 @@ view model =
         MessagesRoute ->
             messagesView model.messages
         LoginRoute ->
-            Html.map LoginMsg (LoginView.view model.login)
+            LoginView.view model.login
         NotFoundRoute ->
             notFoundView

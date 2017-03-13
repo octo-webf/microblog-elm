@@ -9,8 +9,7 @@ import Json.Decode as Decode
 import Css.AppCss exposing (CssClasses(..))
 import Views.Login.Css exposing (CssClasses(..))
 import Views.Login.Model exposing (Model)
-import Views.Login.Messages exposing (Msg(..))
-
+import Messages exposing (Msg(..))
 
 { class } =
     Html.CssHelpers.withNamespace "microblog"
@@ -43,7 +42,7 @@ view model =
                           , autofocus True ] []
                   ]
                 , div []
-                  [ a [ href "/", onLinkClick (ChangeLocation "/") ] [ text "Home" ]
+                  [ a [ href "/toto", onLinkClick (ChangeLocation "/toto") ] [ text "Home" ]
                   ]
                 ]
               ]
