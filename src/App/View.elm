@@ -5,8 +5,8 @@ import Messages exposing (Msg(..))
 import Models exposing (Model)
 import Routing.Router exposing (Route(..))
 import Errors.ErrorViews exposing (notFoundView)
-import Views.Login exposing (loginView)
 import Views.Messages exposing (messagesView)
+import Views.Login.View as LoginView
 
 
 view : Model -> Html Msg
@@ -15,6 +15,6 @@ view model =
         MessagesRoute ->
             messagesView model.messages
         LoginRoute ->
-            loginView model.login
+            Html.map LoginMsg (LoginView.view model.login)
         NotFoundRoute ->
             notFoundView

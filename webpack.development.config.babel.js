@@ -18,7 +18,8 @@ export default {
           loader: 'elm-webpack-loader',
           options: {
             verbose: true,
-            warn: true
+            warn: true,
+            debug: true
           }
         }
       }
