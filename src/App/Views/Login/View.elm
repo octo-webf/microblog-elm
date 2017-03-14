@@ -1,15 +1,15 @@
 module Views.Login.View exposing (..)
 
 import Html.CssHelpers
-import Html exposing (..)
+import Html exposing (Html, div, img, p, text, form, button, input, a)
 import Html.Events exposing (onWithOptions)
 import Html.Attributes exposing (src, href, type_, autocomplete, placeholder, autofocus)
-import Json.Decode as Decode
 
 import Css.AppCss exposing (CssClasses(..))
 import Views.Login.Css exposing (CssClasses(..))
 import Views.Login.Model exposing (Model)
-import Messages exposing (Msg(..))
+import Views.Login.Messages exposing (Msg(..))
+import Components.Link exposing (onLinkClick)
 
 { class } =
     Html.CssHelpers.withNamespace "microblog"
@@ -42,7 +42,11 @@ view model =
                           , autofocus True ] []
                   ]
                 , div []
-                  [ a [ href "/toto", onLinkClick (ChangeLocation "/toto") ] [ text "Home" ]
+                  [ button [ class [ LoginFormSubmit ]
+                           , type_ "submit"
+                           , onLinkClick (ChangeLocation "/")
+                           ]
+                           [ text model.submitLabel ]
                   ]
                 ]
               ]
@@ -50,13 +54,3 @@ view model =
           ]
         ]
       ]
-
-onLinkClick : msg -> Attribute msg
-onLinkClick message =
-    let
-        options =
-            { stopPropagation = False
-            , preventDefault = True
-            }
-    in
-        onWithOptions "click" options (Decode.succeed message)

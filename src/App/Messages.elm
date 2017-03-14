@@ -1,7 +1,8 @@
 module Messages exposing (..)
 
 import Navigation exposing (Location)
+import Views.Login.Messages
 
 type Msg
-    = ChangeLocation String
-    | OnLocationChange Location
+    = OnLocationChange Location
+    | LoginMsg Views.Login.Messages.Msg
