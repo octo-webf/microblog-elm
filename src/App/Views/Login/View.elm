@@ -2,7 +2,6 @@ module Views.Login.View exposing (..)
 
 import Html.CssHelpers
 import Html exposing (Html, div, img, p, text, form, button, input, a)
-import Html.Events exposing (onWithOptions)
 import Html.Attributes exposing (src, href, type_, autocomplete, placeholder, autofocus)
 
 import Css.AppCss exposing (CssClasses(..))
@@ -11,11 +10,9 @@ import Views.Login.Model exposing (Model)
 import Views.Login.Messages exposing (Msg(..))
 import Components.Link exposing (onLinkClick)
 
+
 { class } =
     Html.CssHelpers.withNamespace "microblog"
-
-
--- VIEW
 
 
 view : Model -> Html Msg
