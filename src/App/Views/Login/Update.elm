@@ -8,5 +8,5 @@ import Views.Login.Messages exposing (Msg(..))
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        ChangeLocation requiredPath ->
-            ( { model | requiredPath = requiredPath }, Navigation.newUrl requiredPath )
+        ChangeLocation path ->
+            ( model, Navigation.newUrl path )

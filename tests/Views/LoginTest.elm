@@ -4,14 +4,15 @@ import Test exposing (..)
 import Test.Html.Query as Query
 import Test.Html.Selector exposing (..)
 
-import Views.Login exposing (loginView, defaultLoginModel)
+import Views.Login.View exposing (view)
+import Views.Login.Model exposing (defaultModel)
 
 
 all : Test
 all =
     let
         loginComponent =
-            loginView defaultLoginModel
+            view defaultModel
                 |> Query.fromHtml
     in
         describe "view loginView"
@@ -19,15 +20,20 @@ all =
                 \() ->
                     loginComponent
                         |> Query.find [ tag "img" ]
-                        |> Query.has [ attribute "src" "https://avatars0.githubusercontent.com/u/4359353?v=3&s=200" ]
+                        |> Query.has [ attribute "src" defaultModel.logo ]
             , test "Form should have correct intro" <|
                 \() ->
                     loginComponent
                         |> Query.find [ tag "p" ]
-                        |> Query.has [ text "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit." ]
+                        |> Query.has [ text defaultModel.intro ]
             , test "Form submit should have correct placeholder" <|
                 \() ->
                     loginComponent
                         |> Query.find [ tag "input" ]
-                        |> Query.has [ attribute "placeholder" "Your username" ]
+                        |> Query.has [ attribute "placeholder" defaultModel.inputPlaceholder ]
+            , test "Form submit should have correct submit label" <|
+                \() ->
+                    loginComponent
+                        |> Query.find [ tag "button" ]
+                        |> Query.has [ text defaultModel.submitLabel]
             ]
