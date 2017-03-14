@@ -1,41 +1,25 @@
-module Views.Login exposing (..)
+module Views.Login.View exposing (..)
 
 import Html.CssHelpers
-import Html exposing (Html, div, text, img, p, form, input, button)
-import Html.Attributes exposing (src, type_, autocomplete, placeholder, autofocus)
+import Html exposing (Html, div, img, p, text, form, button, input, a)
+import Html.Events exposing (onWithOptions)
+import Html.Attributes exposing (src, href, type_, autocomplete, placeholder, autofocus)
 
-import Views.LoginCss exposing (CssClasses(..))
 import Css.AppCss exposing (CssClasses(..))
+import Views.Login.Css exposing (CssClasses(..))
+import Views.Login.Model exposing (Model)
+import Views.Login.Messages exposing (Msg(..))
+import Components.Link exposing (onLinkClick)
 
 { class } =
     Html.CssHelpers.withNamespace "microblog"
 
 
--- MODEL
-
-
-type alias LoginModel =
-    { logo : String
-    , intro : String
-    , inputPlaceholder : String
-    , submitLabel : String
-    }
-
-
-defaultLoginModel : LoginModel
-defaultLoginModel =
-    { logo = "https://avatars0.githubusercontent.com/u/4359353?v=3&s=200"
-    , intro = "Has autem provincias, quas Orontes ambiens amnis imosque pedes Cassii montis illius celsi praetermeans funditur in Parthenium mare, Gnaeus Pompeius superato Tigrane regnis Armeniorum abstractas dicioni Romanae coniunxit."
-    , inputPlaceholder = "Your username"
-    , submitLabel = "Login"
-    }
-
-
 -- VIEW
 
 
-loginView : LoginModel -> Html msg
-loginView model =
+view : Model -> Html Msg
+view model =
     div [ class [ App ] ]
       [ div [ class [ Login ] ]
         [ div [ class [ LoginHeader ] ]
@@ -59,7 +43,9 @@ loginView model =
                   ]
                 , div []
                   [ button [ class [ LoginFormSubmit ]
-                           , type_ "submit" ]
+                           , type_ "submit"
+                           , onLinkClick (ChangeLocation "/")
+                           ]
                            [ text model.submitLabel ]
                   ]
                 ]
@@ -68,4 +54,3 @@ loginView model =
           ]
         ]
       ]
-
